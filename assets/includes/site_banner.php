@@ -19,7 +19,7 @@ NOTES
 
 		<div id="splash">
 
-			<a href="/2018/files/2017/03/hijab-girl-signs-ball.jpg"><img src="/2018/files/2017/03/hijab-girl-signs-ball.jpg" alt="Girl signs The Ball" title="Girl signs The Ball" width="200" height="150" class="alignnone size-medium wp-image-122" /></a>
+			<a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/interface/teaser-gaziantep-640x427.jpg"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/interface/teaser-gaziantep-640x427.jpg" alt="Boy hugging The Ball" title="Boy hugging The Ball" width="200" height="138" class="alignnone size-medium wp-image-122" /></a>
 
 		</div><!-- /splash -->
 

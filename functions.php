@@ -95,7 +95,7 @@ function theball2022_theball_image( $default ) {
 }
 
 // add a filter for the above
-add_filter( 'theball_image', 'theball2022_theball_image', 10, 1 );
+//add_filter( 'theball_image', 'theball2022_theball_image', 10, 1 );
 
 
 

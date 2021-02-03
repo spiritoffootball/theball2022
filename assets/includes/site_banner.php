@@ -27,7 +27,7 @@ NOTES
 
 			<h2>Welcome to <?php bloginfo( 'title' ); if ( is_home() ) { echo ' blog'; } ?></h2>
 
-			<p>The Ball 2022 kicks off from Battersea Park in London, where the first official game of football was played, and travels to the World Cup in Qatar.</p>
+			<p>The Ball 2022 kicks off from Battersea Park in London, where the first official game of football was played, and travels to the Men’s World Cup in Qatar and the Women’s World Cup in Australia &amp; New Zealand. The journey will show how football can help with the climate emergency.</p>
 
 			<?php if ( ! is_home() ) { ?>
 				<p id="gotoblog"><a href="/2022/blog/">Read the blog &rarr;</a></p>

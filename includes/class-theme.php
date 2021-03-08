@@ -20,6 +20,19 @@ NOTES
  */
 class SOF_The_Ball_2022_Theme {
 
+	/**
+	 * Rich Styling Templates.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @var array $rich_templates The of templates which have "rich" styling.
+	 */
+	public $rich_templates = [
+		'page-rich-widgets-two-cols.php',
+		'page-rich-two-cols.php',
+		'page-rich-one-col.php',
+	];
+
 
 
 	/**
@@ -118,6 +131,7 @@ class SOF_The_Ball_2022_Theme {
 
 		// Add CSS and JS with high priority so they are late in the queue.
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ], 1005 );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 1005 );
 
 		// Filter the image of The Ball.
 		//add_filter( 'theball_image', [ $this, 'theball_image_filter' ] );
@@ -127,6 +141,9 @@ class SOF_The_Ball_2022_Theme {
 
 		// Filter the Team Members array.
 		//add_filter( 'theball_team_members', [ $this, 'team_members_filter' ] );
+
+		// Filter the Submenu Widget Title.
+		add_filter( 'widget_title', [ $this, 'widget_title_filter' ], 10, 3 );
 
 	}
 
@@ -159,19 +176,12 @@ class SOF_The_Ball_2022_Theme {
 	 */
 	public function enqueue_styles() {
 
-		// Which ones are our "rich" templates.
-		$rich_templates = [
-			'page-rich-widgets-two-cols.php',
-			'page-rich-two-cols.php',
-			'page-rich-one-col.php',
-		];
-
 		// If it's one of our "rich" templates.
-		if ( is_page_template( $rich_templates ) ) {
+		if ( is_page_template( $this->rich_templates ) ) {
 
 			// Add rich styles.
 			wp_enqueue_style(
-				'theball_main_css',
+				'theball_rich_css',
 				get_template_directory_uri() . '/assets/css/rich.css',
 				[ 'theball_screen_css', 'dashicons' ], // Dependencies.
 				THEBALL_VERSION, // Version.
@@ -188,6 +198,32 @@ class SOF_The_Ball_2022_Theme {
 			THEBALL2022_VERSION, // Version.
 			'all' // Media.
 		);
+
+	}
+
+
+
+
+	/**
+	 * Add our theme's JavaScript files.
+	 *
+	 * @since 1.0.0
+	 */
+	public function enqueue_scripts() {
+
+		// If it's one of our "rich" templates.
+		if ( is_page_template( $this->rich_templates ) ) {
+
+			// Navigation script.
+			wp_enqueue_script(
+				'theball2022_navigation',
+				get_stylesheet_directory_uri() . '/assets/js/navigation-widget-menu.js',
+				[],
+				THEBALL2022_VERSION,
+				true
+			);
+
+		}
 
 	}
 
@@ -245,6 +281,48 @@ class SOF_The_Ball_2022_Theme {
 
 		// 2022 users.
 		return [ 3, 5, 8, 7, 2, 4 ];
+
+	}
+
+
+
+	/**
+	 * Modify the title of the Submenu Widget.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string The instance title.
+	 * @param array $instance Settings for the current widget instance.
+	 * @param string The ID of the widget.
+	 * @return string The modified instance title.
+	 */
+	public function widget_title_filter( $title, $instance, $id_base ) {
+
+		// Bail if not the Widget we're looking for.
+		if ( empty( $instance['nav_menu'] ) ) {
+			return $title;
+		}
+		if ( $instance['nav_menu'] != 2 ) {
+			return $title;
+		}
+
+		// Wrap title in span.
+		$title = '<span class="menu-toggle">' . $title . '<span>';
+
+		/*
+		$e = new \Exception();
+		$trace = $e->getTraceAsString();
+		error_log( print_r( [
+			'method' => __METHOD__,
+			'title' => $title,
+			'instance' => $instance,
+			'id_base' => $id_base,
+			//'backtrace' => $trace,
+		], true ) );
+		*/
+
+		// --<
+		return $title;
 
 	}
 

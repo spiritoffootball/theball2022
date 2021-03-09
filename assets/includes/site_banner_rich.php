@@ -30,7 +30,9 @@ NOTES
 			</div>
 
 			<div class="splash_right_widget">
-				<?php dynamic_sidebar( 'sof-top-right' ); ?>
+				<div id="splash_right">
+					<?php dynamic_sidebar( 'sof-top-right-page' ); ?>
+				</div>
 			</div>
 
 		<?php } elseif ( is_page() AND empty( $post->post_parent ) ) { ?>

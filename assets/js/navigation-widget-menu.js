@@ -15,7 +15,7 @@ support for dropdown menus.
 ( function() {
 	var container, button, menu, links, subMenus, i, len;
 
-	container = document.getElementById( 'nav_menu-3' );
+	container = document.getElementById( 'splash_right' );
 	if ( ! container ) {
 		return;
 	}
@@ -32,8 +32,6 @@ support for dropdown menus.
 		button.style.display = 'none';
 		return;
 	}
-
-	console.log( 'yup' );
 
 	menu.setAttribute( 'aria-expanded', 'false' );
 	if ( -1 === menu.className.indexOf( 'subnav-menu' ) ) {

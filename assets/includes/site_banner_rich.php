@@ -31,7 +31,7 @@ NOTES
 
 			<div class="splash_right_widget">
 				<div id="splash_right">
-					<?php dynamic_sidebar( 'sof-top-right-page' ); ?>
+					<?php dynamic_sidebar( 'sof-top-right' ); ?>
 				</div>
 			</div>
 

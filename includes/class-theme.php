@@ -143,7 +143,10 @@ class SOF_The_Ball_2022_Theme {
 		//add_filter( 'theball_team_members', [ $this, 'team_members_filter' ] );
 
 		// Filter the Submenu Widget Title.
-		add_filter( 'widget_title', [ $this, 'widget_title_filter' ], 10, 3 );
+		add_filter( 'widget_title', [ $this, 'widget_menu_title_filter' ], 10, 3 );
+
+		// Filter the Child Pages Widget Title.
+		add_filter( 'widget_title', [ $this, 'widget_list_title_filter' ], 10, 3 );
 
 	}
 
@@ -160,7 +163,7 @@ class SOF_The_Ball_2022_Theme {
 		 * Make theme available for translation.
 		 * Translations can be added to the /languages/ directory of the child theme.
 		 */
-		load_theme_textdomain(
+		load_child_theme_textdomain(
 			'theball2022',
 			get_stylesheet_directory() . '/languages'
 		);
@@ -296,13 +299,55 @@ class SOF_The_Ball_2022_Theme {
 	 * @param string The ID of the widget.
 	 * @return string The modified instance title.
 	 */
-	public function widget_title_filter( $title, $instance, $id_base ) {
+	public function widget_menu_title_filter( $title, $instance, $id_base ) {
 
 		// Bail if not the Widget we're looking for.
 		if ( empty( $instance['nav_menu'] ) ) {
 			return $title;
 		}
 		if ( $instance['nav_menu'] != 2 ) {
+			return $title;
+		}
+
+		// Wrap title in span.
+		$title = '<span class="menu-toggle">' . $title . '<span>';
+
+		/*
+		$e = new \Exception();
+		$trace = $e->getTraceAsString();
+		error_log( print_r( [
+			'method' => __METHOD__,
+			'title' => $title,
+			'instance' => $instance,
+			'id_base' => $id_base,
+			//'backtrace' => $trace,
+		], true ) );
+		*/
+
+		// --<
+		return $title;
+
+	}
+
+
+
+	/**
+	 * Modify the title of the Child Pages Widget.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string The instance title.
+	 * @param array $instance Settings for the current widget instance.
+	 * @param string The ID of the widget.
+	 * @return string The modified instance title.
+	 */
+	public function widget_list_title_filter( $title, $instance, $id_base ) {
+
+		// Bail if not the Widget we're looking for.
+		if ( empty( $id_base ) ) {
+			return $title;
+		}
+		if ( $id_base != 'widget_featured_page' ) {
 			return $title;
 		}
 

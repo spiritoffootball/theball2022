@@ -193,6 +193,20 @@ class SOF_The_Ball_2022_Theme {
 
 		}
 
+		// If it's the Journey Page.
+		if ( is_page( 65 ) ) {
+
+			// Add Magnifier styles.
+			wp_enqueue_style(
+				'theball_magnifier_css',
+				get_template_directory_uri() . '/assets/js/jquery.magnify/css/magnify.css',
+				[], // Dependencies.
+				THEBALL_VERSION, // Version.
+				'all' // Media.
+			);
+
+		}
+
 		// Enqueue file.
 		wp_enqueue_style(
 			'theball2022_css',
@@ -224,6 +238,38 @@ class SOF_The_Ball_2022_Theme {
 				[],
 				THEBALL2022_VERSION,
 				true
+			);
+
+		}
+
+		// If it's the Journey Page.
+		if ( is_page( 65 ) ) {
+
+			// Add Magnifier script.
+			wp_enqueue_script(
+				'theball_magnifier_js',
+				get_template_directory_uri() . '/assets/js/jquery.magnify/js/jquery.magnify.js',
+				[ 'jquery' ], // Dependencies.
+				THEBALL_VERSION, // Version.
+				'all' // Media.
+			);
+
+			// Add Mobile Magnifier script.
+			wp_enqueue_script(
+				'theball_magnifier_mobile_js',
+				get_template_directory_uri() . '/assets/js/jquery.magnify/js/jquery.magnify-mobile.js',
+				[ 'jquery' ], // Dependencies.
+				THEBALL_VERSION, // Version.
+				'all' // Media.
+			);
+
+			// Add Our Magnifier script.
+			wp_enqueue_script(
+				'theball_magnifier_loader_js',
+				get_template_directory_uri() . '/assets/js/the-ball-magnify.js',
+				[ 'theball_magnifier_js', 'theball_magnifier_mobile_js' ], // Dependencies.
+				THEBALL_VERSION, // Version.
+				'all' // Media.
 			);
 
 		}

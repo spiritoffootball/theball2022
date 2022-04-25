@@ -5,7 +5,7 @@
  * This overrides the parent theme template.
  *
  * @since 1.0.0
- * @package The_Ball_2026
+ * @package The_Ball_2022
  */
 
 get_header(); ?>

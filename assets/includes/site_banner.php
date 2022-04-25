@@ -1,13 +1,10 @@
-<?php /*
-================================================================================
-2022 Site Banner Template
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Site Banner Template.
+ *
+ * @since 1.0.0
+ * @package The_Ball_2022
+ */
 
 // Build query for "Site Header" page.
 $args = [
@@ -31,7 +28,8 @@ $site_header = new WP_Query( $args );
 		<?php endif; ?>
 
 		<?php if ( $site_header->have_posts() ) : ?>
-			<?php while ( $site_header->have_posts()) : $site_header->the_post(); ?>
+			<?php while ( $site_header->have_posts() ) : ?>
+				<?php $site_header->the_post(); ?>
 
 				<div id="splash">
 
@@ -59,8 +57,6 @@ $site_header = new WP_Query( $args );
 
 </div><!-- /site_banner -->
 
-
-
 <div id="cols" class="clearfix">
 <div class="cols_inner">
 
@@ -68,6 +64,3 @@ $site_header = new WP_Query( $args );
 	<?php if ( $page_list ) : ?>
 		<?php load_template( $page_list ); ?>
 	<?php endif; ?>
-
-
-

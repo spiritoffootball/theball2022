@@ -1,13 +1,10 @@
-<?php /*
-================================================================================
-Template Name: Page Rich Widgets Two Columns
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Template Name: Page Rich Widgets Two Columns
+ *
+ * @since 1.0.0
+ * @package The_Ball_2022
+ */
 
 get_header(); ?><!-- page-rich-widgets-two-cols.php -->
 

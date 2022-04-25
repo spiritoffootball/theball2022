@@ -1,22 +1,15 @@
-<?php /*
-================================================================================
-The Ball 2022 Child Theme Functions
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
-Theme amendments and overrides.
-
---------------------------------------------------------------------------------
-*/
-
-
+<?php
+/**
+ * The Ball 2022 Child Theme Functions
+ *
+ * Theme amendments and overrides.
+ *
+ * @since 1.0.0
+ * @package The_Ball_2022
+ */
 
 // Set our version here.
 define( 'THEBALL2022_VERSION', '2.0.1' );
-
-
 
 /**
  * Load theme class if not yet loaded and return instance.
@@ -43,6 +36,3 @@ function sof_the_ball_2022_theme() {
 
 // Init immediately.
 sof_the_ball_2022_theme();
-
-
-

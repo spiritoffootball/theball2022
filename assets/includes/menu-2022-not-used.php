@@ -1,13 +1,10 @@
-<?php /*
-================================================================================
-Global Menu for Themes based on The Ball
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Global Menu for Themes based on The Ball.
+ *
+ * @since 1.0.0
+ * @package The_Ball_2022
+ */
 
 // Access blog ID and post.
 global $blog_id, $post;
@@ -15,7 +12,7 @@ global $blog_id, $post;
 ?><!-- assets/includes/menu.php -->
 
 <div id="site-navigation" class="main-navigation" role="navigation">
-	<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Main Menu', 'theball' ); ?></span>
+	<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'theball2022' ); ?></span>
 	<div class="global-menu">
 		<ul id="primary-menu" class="menu nav-menu" aria-expanded="false">
 			<?php

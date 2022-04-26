@@ -96,6 +96,3 @@
 	</div><!-- /site_banner_inner -->
 
 </div><!-- /site_banner -->
-
-
-

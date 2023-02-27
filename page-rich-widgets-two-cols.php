@@ -6,7 +6,13 @@
  * @package The_Ball_2022
  */
 
-get_header(); ?><!-- page-rich-widgets-two-cols.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+get_header();
+
+?>
+<!-- page-rich-widgets-two-cols.php -->
 
 <div id="content_wrapper" class="clearfix">
 

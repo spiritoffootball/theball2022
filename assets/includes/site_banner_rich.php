@@ -6,10 +6,12 @@
  * @package The_Ball_2022
  */
 
-?><!-- assets/includes/site_banner_rich.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
+?>
+<!-- assets/includes/site_banner_rich.php -->
 <div id="site_banner" class="site_banner_rich clearfix">
-
 	<div id="site_banner_inner" class="clearfix">
 
 		<?php if ( is_front_page() ) { ?>
@@ -94,5 +96,4 @@
 		<?php } ?>
 
 	</div><!-- /site_banner_inner -->
-
 </div><!-- /site_banner -->

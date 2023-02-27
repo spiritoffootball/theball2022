@@ -6,11 +6,14 @@
  * @package The_Ball_2022
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 // Access blog ID and post.
 global $blog_id, $post;
 
-?><!-- assets/includes/menu.php -->
-
+?>
+<!-- assets/includes/menu.php -->
 <div id="site-navigation" class="main-navigation" role="navigation">
 	<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'theball2022' ); ?></span>
 	<div class="global-menu">
@@ -49,6 +52,3 @@ global $blog_id, $post;
 		</ul>
 	</div>
 </div>
-
-
-

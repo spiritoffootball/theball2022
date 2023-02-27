@@ -6,6 +6,9 @@
  * @package The_Ball_2022
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 // Build query for "Site Header" page.
 $args = [
 	'post_type' => 'page',
@@ -16,8 +19,8 @@ $args = [
 // Do query.
 $site_header = new WP_Query( $args );
 
-?><!-- assets/includes/site_banner.php -->
-
+?>
+<!-- assets/includes/site_banner.php -->
 <div id="site_banner" class="clearfix">
 
 	<div id="site_banner_inner">

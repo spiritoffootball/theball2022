@@ -6,7 +6,11 @@
  * @package The_Ball_2022
  */
 
-?><!-- assets/includes/supporters_2022.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- assets/includes/supporters_2022.php -->
 <div id="sponsors" class="clearfix">
 
 	<div id="sponsor_logos">

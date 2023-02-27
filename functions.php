@@ -8,6 +8,9 @@
  * @package The_Ball_2022
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 // Set our version here.
 define( 'THEBALL2022_VERSION', '2.0.1' );
 

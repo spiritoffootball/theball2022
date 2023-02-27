@@ -8,9 +8,13 @@
  * @package The_Ball_2022
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 get_header();
 
-?><!-- archive.php -->
+?>
+<!-- archive.php -->
 
 <div id="content_wrapper" class="clearfix">
 

@@ -1,13 +1,15 @@
-/*
---------------------------------------------------------------------------------
-Theme Name: The Ball 2022 Child Theme
-Theme URI: https://theball.tv/2022/
-Description: A child theme for The Ball 2022.
-Version: 2.0.1
-Template: theball
-Author: Christian Wach
-Author URI: https://www.haystack.co.uk
---------------------------------------------------------------------------------
-*/
+/**
+ * Theme Name:  The Ball 2022 Child Theme
+ * Description: A child theme for The Ball 2022.
+ * Theme URI:   https://github.com/spiritoffootball/theball2022
+ * Version:     2.0.1
+ * Author:      Christian Wach
+ * Author URI:  https://www.haystack.co.uk
+ * Template:    theball
+ * Text Domain: theball2022
+ * Domain Path: /languages
+ *
+ * @package The_Ball_2022
+ */
 
 /* deliberately empty: see 'functions.php' for how styles and scripts are enqueued */
